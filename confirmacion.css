@@ -1,0 +1,275 @@
+/* =======================
+   RESET BÁSICO
+======================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =======================
+   TIPOGRAFÍAS
+======================= */
+@font-face {
+  font-family: 'Bellania Love';
+  src: url('Bellenia Love.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Kaiven Sans';
+  src: url('Kaiven Regular Rounded.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Kaiven Sans';
+  src: url('Kaiven Bold Rounded.ttf') format('truetype');
+  font-weight: bold;
+}
+
+/* =======================
+   VARIABLES DE COLOR
+======================= */
+:root {
+  --fondo-principal: #FAF8F4;
+  --fondo-alterno: #EFE7D8;
+  --texto-principal: #8A7556;
+  --borde-acento: #CBB58B;
+  --blanco-suave: #FBFAF7;
+}
+
+/* =======================
+   BASE GLOBAL
+======================= */
+body {
+  background-color: var(--fondo-principal);
+  font-family: 'Kaiven Sans', sans-serif;
+  color: var(--texto-principal);
+}
+
+/* =======================
+   TÍTULOS
+======================= */
+.titulo-principal {
+  font-family: 'Bellania Love', cursive;
+  font-size: clamp(2.2rem, 6vw, 2.8rem);
+  text-align: center;
+  margin-bottom: 0.6rem;
+}
+
+.subtitulo {
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* =======================
+   CONTENEDOR GENERAL
+======================= */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+/* =======================
+   FIRMA PIXELARTE
+======================= */
+
+.pixelarte-firma {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--borde-acento);
+  text-align: center;
+  opacity: 0.9;
+}
+
+.pixelarte-firma p {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+.pixelarte-firma .marca {
+  font-family: 'Bellania Love', cursive;
+  font-size: 1.6rem;
+  color: var(--texto-principal);
+}
+
+/* =======================
+   TARJETA CONFIRMACIÓN
+======================= */
+
+.confirmacion-card {
+  background-color: rgba(244, 239, 230, 0.8);
+  border: 1px solid var(--borde-acento);
+  border-radius: 18px;
+  padding: 2rem 1.8rem;
+  margin-bottom: 1.8rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.confirmacion-header {
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+
+.confirmacion-nombre {
+  font-family: 'Bellania Love', cursive;
+  font-size: 1.8rem;
+  margin-bottom: 0.2rem;
+}
+
+.confirmacion-estado {
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.confirmacion-estado.confirmo {
+  color: #8A7556;
+}
+
+.confirmacion-estado.no {
+  opacity: 0.6;
+}
+
+.confirmacion-detalle {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  text-align: center;
+  white-space: pre-line;
+}
+
+/* =======================
+   PANEL CONFIRMACIONES
+======================= */
+
+.panel-confirmaciones {
+  background-color: rgba(244, 239, 230, 0.85);
+  border: 1px solid var(--borde-acento);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* =======================
+   FILA CONFIRMACIÓN
+======================= */
+
+.fila-confirmacion {
+  padding: 1.2rem 1rem;
+  border-bottom: 1px solid rgba(203, 181, 139, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.fila-confirmacion:last-child {
+  border-bottom: none;
+}
+
+/* header fila */
+.fila-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* estado */
+.estado {
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.estado.confirmo {
+  color: var(--texto-principal);
+}
+
+.estado.no {
+  opacity: 0.5;
+}
+
+/* cantidad */
+.cantidad {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  opacity: 0.85;
+}
+
+/* nombre */
+.nombre {
+  font-family: 'Bellania Love', cursive;
+  font-size: 1.4rem;
+  margin-top: 0.2rem;
+}
+
+/* detalle invitados */
+.detalle {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  white-space: pre-line;
+}
+
+/* =======================
+   MENSAJE CONFIRMACIÓN
+======================= */
+
+.mensaje {
+  margin-top: 0.6rem;
+  padding-top: 0.6rem;
+  border-top: 1px dashed rgba(203, 181, 139, 0.5);
+  font-size: 0.78rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.mensaje strong {
+  display: block;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+  opacity: 0.8;
+}
+
+/* =======================
+   FILTROS PANEL
+======================= */
+
+.panel-filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.8rem;
+  justify-content: center;
+}
+
+.filtro {
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--borde-acento);
+  background-color: transparent;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: var(--texto-principal);
+  transition: all 0.25s ease;
+}
+
+.filtro:hover {
+  background-color: var(--borde-acento);
+  color: var(--blanco-suave);
+}
+
+.filtro.activo {
+  background-color: var(--borde-acento);
+  color: var(--blanco-suave);
+}
