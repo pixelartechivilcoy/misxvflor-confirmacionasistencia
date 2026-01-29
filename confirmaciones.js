@@ -4,20 +4,25 @@ const SHEET_URL =
 fetch(SHEET_URL)
   .then(res => res.text())
   .then(text => {
-    const filas = text.split("\n").slice(1); // quitamos encabezado
-    const lista = document.querySelector(".panel-lista");
+    const filas = text
+      .trim()
+      .split("\n")
+      .slice(1);
 
-    lista.innerHTML = ""; // limpiamos contenido de prueba
+    const lista = document.querySelector(".panel-lista");
+    lista.innerHTML = "";
 
     filas.forEach(fila => {
-      if (!fila.trim()) return;
+      if (!fila) return;
 
-      const columnas = fila.split(",");
+      // 👉 parseo CSV que respeta comas, saltos y comillas
+      const columnas = fila.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g)
+        ?.map(c => c.replace(/^"|"$/g, "")) || [];
 
-      const estado = columnas[1];       // ¿Vas a asistir?
-      const cantidad = columnas[2];     // Cantidad de personas
-      const invitados = columnas[3];    // Datos invitados
-      const mensaje = columnas[4];      // Mensaje
+      const estado = columnas[1] || "";
+      const cantidad = columnas[2] || "";
+      const invitados = columnas[3] || "";
+      const mensaje = columnas[4] || "";
 
       const div = document.createElement("div");
       div.className = "fila-confirmacion";
@@ -32,7 +37,7 @@ fetch(SHEET_URL)
 
         <div class="nombre">Confirmación</div>
 
-        <div class="detalle">${invitados || ""}</div>
+        <div class="detalle">${invitados.replace(/\n/g, "<br>")}</div>
 
         ${
           mensaje
@@ -47,3 +52,4 @@ fetch(SHEET_URL)
       lista.appendChild(div);
     });
   });
+
