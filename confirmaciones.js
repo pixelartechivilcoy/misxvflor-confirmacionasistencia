@@ -35,7 +35,21 @@ fetch(SHEET_URL)
           <span class="cantidad">${cantidad} personas</span>
         </div>
 
-        <div class="detalle">${invitados.replace(/\n/g, "<br>")}</div>
+        <div class="detalle">
+  ${
+    invitados
+      .split("\n")
+      .map(linea =>
+        linea
+          .replace(/^Invitado \d+:\s*/i, "")
+          .trim()
+      )
+      .filter(Boolean)
+      .map(persona => `• ${persona}`)
+      .join("<br>")
+  }
+</div>
+
 
         ${
           mensaje
@@ -50,5 +64,6 @@ fetch(SHEET_URL)
       lista.appendChild(div);
     });
   });
+
 
 
