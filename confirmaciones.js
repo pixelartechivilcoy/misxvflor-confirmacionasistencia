@@ -35,8 +35,6 @@ fetch(SHEET_URL)
           <span class="cantidad">${cantidad} personas</span>
         </div>
 
-        <div class="nombre">Confirmación</div>
-
         <div class="detalle">${invitados.replace(/\n/g, "<br>")}</div>
 
         ${
@@ -52,4 +50,5 @@ fetch(SHEET_URL)
       lista.appendChild(div);
     });
   });
+
 
